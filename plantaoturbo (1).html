@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Plantão Turbo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #f2f9ff, #fff6fb);
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .priority {
+      font-weight: bold;
+      margin-top: 30px;
+      font-size: 18px;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    .alta { background-color: #ffccd5; }
+    .media { background-color: #ffeeb5; }
+    .baixa { background-color: #d1f7c4; }
+    .task {
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 8px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+    .task input[type="checkbox"] {
+      margin-right: 10px;
+    }
+    .motivational {
+      margin-top: 40px;
+      padding: 20px;
+      border-radius: 12px;
+      background-color: #e0cfff;
+      text-align: center;
+      font-size: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 12px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <h2>Rotina do Plantão</h2>
+
+  <div class="priority alta">Alta Prioridade</div>
+  <div class="task"><input type="checkbox" onchange="hideIfChecked(this)">07:00 - Checar escala da equipe</div>
+  <div class="task"><input type="checkbox" onchange="hideIfChecked(this)">07:10 - Verificar exames/procedimentos e preparar paciente</div>
+  <div class="task"><input type="checkbox" onchange="hideIfChecked(this)">07:20 - Checar carrinho de emergência e temperatura da geladeira</div>
+  <div class="task"><input type="checkbox" onchange="hideIfChecked(this)">07:30 - Monitorar estoque e solicitar materiais</div>
+  <div class="task"><input type="checkbox" onchange="hideIfChecked(this)">07:40–09:30 - Avaliar pacientes (priorizar críticos)</div>
+  <div class="task"><input type="checkbox" onchange="hideIfChecked(this)">09:00 - Round com equipe</div>
+  <div class="task"><input type="checkbox" onchange="hideIfChecked(this)">09:40 - Realizar procedimentos invasivos</div>
+  <div class="task"><input type="checkbox" onchange="hideIfChecked(this)">10:00–11:20 - Evoluções, escalas, SAE, receber pacientes</div>
+
+  <div class="priority media">Média Prioridade</div>
+  <div class="task"><input type="checkbox" onchange="hideIfChecked(this)">14:30–17:00 - Verificar prescrições, folha de exames</div>
+  <div class="task"><input type="checkbox" onchange="hideIfChecked(this)">Supervisionar técnicos e protocolos</div>
+  <div class="task"><input type="checkbox" onchange="hideIfChecked(this)">Avaliar feridas e orientar coberturas</div>
+  <div class="task"><input type="checkbox" onchange="hideIfChecked(this)">Participar de rounds de evolução</div>
+  <div class="task"><input type="checkbox" onchange="hideIfChecked(this)">17:10 - Verificar identificação do paciente</div>
+  <div class="task"><input type="checkbox" onchange="hideIfChecked(this)">17:20 - Atualizar SBAR para passagem de plantão</div>
+
+  <div class="priority baixa">Baixa Prioridade</div>
+  <div class="task"><input type="checkbox" onchange="hideIfChecked(this)">17:30 - Checar estado geral da unidade</div>
+  <div class="task"><input type="checkbox" onchange="hideIfChecked(this)">17:40 - Verificar alta médica no sistema</div>
+  <div class="task"><input type="checkbox" onchange="hideIfChecked(this)">17:50 - Preparar insumos para próximo plantão</div>
+  <div class="task"><input type="checkbox" onchange="hideIfChecked(this)">18:10 - Reunião de feedback com a equipe</div>
+
+  <div class="priority media">Intervalo Pessoal</div>
+  <div class="task"><input type="checkbox" onchange="hideIfChecked(this)">15:45–16:45 - Seu intervalo: Cuide de você!</div>
+
+  <div class="motivational">
+    Parabéns, enfermeira maravilhosa!<br><strong>Você cuidou com amor, organização e brilho!</strong><br>
+    Obrigada por dar o seu melhor hoje.
+  </div>
+
+  <footer>Checklist interativo | Plantão Turbo – Enf. Amanda</footer>
+
+  <script>
+    function hideIfChecked(checkbox) {
+      if (checkbox.checked) {
+        checkbox.parentElement.style.opacity = "0";
+        setTimeout(() => checkbox.parentElement.style.display = "none", 300);
+      }
+    }
+  </script>
+</body>
+</html>
